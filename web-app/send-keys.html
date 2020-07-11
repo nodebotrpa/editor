@@ -1,0 +1,72 @@
+<script type="text/javascript">
+    RED.nodes.registerType('send-keys',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+            xpath: {value:"",required:true},
+            text: {value:"",required:true},
+            clear: {value:false},
+            waitvisible: {value:false},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-keyboard-o",
+        label: function() {
+			if (this.name == "") return "Send Keys";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="send-keys">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> Element</label>
+        <input type="text" id="node-input-xpath" placeholder="Enter xpath of web element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-text"><i class="icon-tag"></i> Text</label>
+        <input type="text" id="node-input-text" placeholder="Enter text to type">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clear"><i class="icon-tag"></i> Clear</label>
+		<input type="checkbox" id="node-input-clear" value="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitvisible"><i class="icon-tag"></i> Wait until visible</label>
+		<input type="checkbox" id="node-input-waitvisible" value="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="send-keys">
+    <p>Send keys to web element</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>XPath : </b>XPath of web element</li>
+	  <li><b>Text : </b>Text to be typed. You can use hotkeys between {} eg. {CTRL}. Use {NULL} to release hotkeys</li>
+	  <li><b>Clear : </b>Clears web element text before typing</li>
+	  <li><b>Wait Until Item Visible : </b>Waits until web element visible</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>

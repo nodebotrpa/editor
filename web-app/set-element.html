@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('set-element',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+            xpath: {value:"", required:true},
+            text: {value:"",required:true},
+            attr: {value:""},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-pencil",
+        label: function() {
+			if (this.name == "") return "Set Element";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="set-element">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> Element</label>
+        <input type="text" id="node-input-xpath" placeholder="Enter xpath of web element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-attr"><i class="icon-tag"></i> Attribute</label>
+        <input type="text" id="node-input-attr" placeholder="Enter attribute of web element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-text"><i class="icon-tag"></i> Text</label>
+        <input type="text" id="node-input-text" placeholder="Enter value you want to assign">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="set-element">
+    <p>Set Element</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>Element : </b>XPath of web element</li>
+	  <li><b>Attribute : </b>Attribute of element to be changed</li>
+	  <li><b>Text : </b>New value of web element</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>

@@ -1,0 +1,85 @@
+<script type="text/javascript">
+    RED.nodes.registerType('scrap-data',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+			table: {value:"",required:true},
+			header: {value:""},
+			row: {value:"",required:true},
+			col: {value:"",required:true},
+			firstRecord: {value:false},
+            variable: {value:""},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-table",
+        label: function() {
+			if (this.name == "") return "Scrap data";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="scrap-data">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-table"><i class="icon-tag"></i> Table</label>
+        <input type="text" id="node-input-table" placeholder="Enter xpath of table element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-header"><i class="icon-tag"></i> Header</label>
+        <input type="text" id="node-input-header" placeholder="Enter xpath of table header element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-row"><i class="icon-tag"></i> Row</label>
+        <input type="text" id="node-input-row" placeholder="Enter xpath of table row element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-col"><i class="icon-tag"></i> Col</label>
+        <input type="text" id="node-input-col" placeholder="Enter xpath of table column element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-firstRecord"><i class="icon-tag"></i> Header?</label>
+		<input type="checkbox" id="node-input-firstRecord" value="">
+		<label for="node-input-firstRecord">First record is header</label>
+    </div>
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Result variable name</label>
+        <input type="text" id="node-input-variable" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="scrap-data">
+    <p>Scraps table data</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>Table : </b>Xpath of table element</li>
+	  <li><b>Header : </b>Xpath of table header element</li>
+	  <li><b>Row : </b>Xpath of table row element</li>
+	  <li><b>Col : </b>Xpath of table column element</li>
+	  <li><b>Header? : </b>Check if there is no header and use first record as header</li>
+	  <li><b>Variable : </b>Specifies the variable name to assign the output. Output result is storing on local.</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>
