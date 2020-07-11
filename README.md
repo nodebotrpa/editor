@@ -25,6 +25,7 @@ npm install <nodebot module>
 node-red
 ~~~
 You can access the editor by your browser at http://localhost:1880
+
 2. Run BotConnect
 ~~~
 cd <BotConnect location>
