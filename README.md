@@ -26,7 +26,7 @@ node-red
 ~~~
 You can access the editor by your browser at http://localhost:1880
 
-2. Run BotConnect
+2. Run [BotConnect](https://github.com/nodebotrpa/connect)
 ~~~
 cd <BotConnect location>
 node ws-ssl.js
