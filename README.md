@@ -20,4 +20,4 @@ Start Node-red
 ~~~
 node-red
 ~~~
-You can access the editor by your browser at http://localhost:8080
+You can access the editor by your browser at http://localhost:1880
