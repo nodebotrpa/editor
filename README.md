@@ -3,13 +3,17 @@ You can use Node-red flow editor to automate processes with NodeBot RPA
 
 ## Installation
 1. Download [Node.js](https://nodejs.org/en/download/) and install it
-2. [Install Node-Red](https://nodered.org/docs/getting-started/local#installing-with-npm)
+2. Install WebSocket module
+~~~
+npm install ws
+~~~
+3. [Install Node-Red](https://nodered.org/docs/getting-started/local#installing-with-npm)
 ~~~
 npm install -g --unsafe-perm node-red
 ~~~
-3. Download node files and copy under node_modules directory
-4. Start command line as administrator
-5. Run command
+4. Download node files and copy under node_modules directory
+5. Start command line as administrator
+6. Run command
 ~~~
 cd <node-red location>
 npm install <nodebot module>
