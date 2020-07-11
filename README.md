@@ -31,4 +31,4 @@ You can access the editor by your browser at http://localhost:1880
 cd <BotConnect location>
 node ws-ssl.js
 ~~~
-3. Run NodeBot Worker (nbWorker.exe)
+3. Run [NodeBot Worker](https://github.com/nodebotrpa/bot)
