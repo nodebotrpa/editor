@@ -1,0 +1,35 @@
+{
+  "name": "worker-client-web-app",
+  "version": "1.0.0",
+  "description": "Automates web applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web","browser","open","url","navigate","run","mouse","alert","accept","dismiss","value","attribute","set","get",
+	"minimize","maximize","full screen","close","back","forward","refresh","title","switch","frame","window","text","value",
+	"attribute","capture","screenshot"
+  ],
+  "author": "NodeBotRpa@gmail.com",
+  "license": "Fair license",
+  "node-red": {
+    "nodes": {
+      "create-session": "create-session.js",
+	  "navigate-to":"navigate-to.js",
+	  "send-keys":"send-keys.js",
+	  "mouse":"mouse.js",
+	  "web-alert":"web-alert.js",
+	  "set-element":"set-element.js",
+	  "window-action":"window-action.js",
+	  "set-title":"set-title.js",
+	  "switch-frame":"switch-frame.js",
+	  "switch-window":"switch-window.js",
+	  "get-element":"get-element.js",
+	  "get-window":"get-window.js",
+	  "execute-script":"execute-script.js",
+	  "scrap-data":"scrap-data.js",
+	  "screen-shot":"screen-shot.js"
+    }
+  }
+}
