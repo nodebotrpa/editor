@@ -1,0 +1,21 @@
+{
+  "name": "worker-client-programming",
+  "version": "1.0.0",
+  "description": "Programming activities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "variable"
+  ],
+  "author": "NodeBotRpa@gmail.com",
+  "license": "Fair License",
+  "node-red": {
+    "nodes": {
+	  "nbr-get-variable" :"nbr-get-variable.js",
+	  "nbr-set-variable" :"nbr-set-variable.js",
+	  "nbr-del-variable" :"nbr-del-variable.js"
+    }
+  }
+}
