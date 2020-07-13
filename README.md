@@ -32,3 +32,5 @@ cd <BotConnect location>
 node ws-ssl.js
 ~~~
 3. Run [NodeBot Worker](https://github.com/nodebotrpa/bot)
+
+## Documentation
