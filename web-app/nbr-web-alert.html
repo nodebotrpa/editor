@@ -1,0 +1,64 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-web-alert',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+            action: {value:1, required:true},
+            text: {value:""},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-comment-o",
+        label: function() {
+			if (this.name == "") return "Alert";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-web-alert">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action"><i class="icon-tag"></i> Action</label>
+		<select class="form-control" id="node-input-action">
+			<option value="1">Accept</option>
+			<option value="2">Dismiss</option>
+			<option value="3">Send keys</option>
+		</select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-text"><i class="icon-tag"></i> Text</label>
+        <input type="text" id="node-input-text" placeholder="Enter text for prompt">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-web-alert">
+    <p>Web Alert Actions</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>Action : </b>Accept/Dismiss alert. Use Send keys for promp alerts.</li>
+	  <li><b>Text : </b>Text for promp alerts</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>

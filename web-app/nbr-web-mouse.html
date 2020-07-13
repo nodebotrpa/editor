@@ -1,0 +1,94 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-web-mouse',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+            xpath: {value:"",required:true},
+            offsetX: {value:0},
+            offsetY: {value:0},
+            button: {value:0, required:true},
+            action: {value:1, required:true},
+            waitvisible: {value:false},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-mouse-pointer",
+        label: function() {
+			if (this.name == "") return "Click";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-web-mouse">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> Element</label>
+        <input type="text" id="node-input-xpath" placeholder="Enter xpath of web element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action"><i class="icon-tag"></i> Action</label>
+		<select class="form-control" id="node-input-action">
+			<option value="0">Move</option>
+			<option value="1">Click</option>
+			<option value="2">Double Click</option>
+			<option value="3">Mouse Down</option>
+			<option value="4">Mouse Up</option>
+		</select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-button"><i class="icon-tag"></i> Button</label>
+		<select class="form-control" id="node-input-button">
+			<option value="0">Left</option>
+			<option value="1">Middle</option>
+			<option value="2">Right</option>
+		</select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-offsetX"><i class="icon-tag"></i> Offset X</label>
+        <input type="text" id="node-input-offsetX" placeholder="Enter x position">
+    </div>
+    <div class="form-row">
+        <label for="node-input-offsetY"><i class="icon-tag"></i> Offset Y</label>
+        <input type="text" id="node-input-offsetY" placeholder="Enter y position">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitvisible"><i class="icon-tag"></i> Wait until visible</label>
+		<input type="checkbox" id="node-input-waitvisible" value="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-web-mouse">
+    <p>Clicks to web element</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>Element : </b>XPath of web element</li>
+	  <li><b>Action : </b>Mouse action</li>
+	  <li><b>Button : </b>Mouse button</li>
+	  <li><b>Offset X : </b>X Offset of web element</li>
+	  <li><b>Offset Y : </b>Y Offset of web element</li>
+	  <li><b>Wait Until Item Visible : </b>Waits until web element visible</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>

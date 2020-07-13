@@ -1,0 +1,80 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-web-new-session',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"CHROME",required:true},
+            implicit: {value:"0"},
+            script: {value:"0"},
+            pageLoad: {value:"0"},
+            maximize: {value:false},
+            variable: {value:"",required:true},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-window-maximize",
+        label: function() {
+			if (this.name == "") return "New Session";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-web-new-session">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Browser</label>
+		<select class="form-control" id="node-input-browser">
+			<option value="CHROME">Chrome</option>
+		</select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-implicit"><i class="icon-tag"></i> Implicit</label>
+        <input type="text" id="node-input-implicit" placeholder="Enter implicit wait (miliseconds)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-script"><i class="icon-tag"></i> Script</label>
+        <input type="text" id="node-input-script" placeholder="Enter script wait (miliseconds)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pageLoad"><i class="icon-tag"></i> pageLoad</label>
+        <input type="text" id="node-input-pageLoad" placeholder="Enter pageLoad wait (miliseconds)">
+    </div>
+    <div class="form-row">
+        <label for="node-input-maximize"><i class="icon-tag"></i> Maximize Window</label>
+		<input type="checkbox" id="node-input-maximize" value="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Result variable name</label>
+        <input type="text" id="node-input-variable" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-web-new-session">
+    <p>Opens a browser</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Browser : </b>Browser type</li>
+	  <li><b>Implicit : </b>Wait time for trying to find any element</li>
+	  <li><b>Script : </b>Wait time for executing a script</li>
+	  <li><b>PageLoad : </b>Wait time for navigating to address</li>
+	  <li><b>Maximize : </b>Maximizes the browser window</li>
+	  <li><b>Variable : </b>Specifies the variable name to assign the output. Output result is storing on local.</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>

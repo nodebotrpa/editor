@@ -15,21 +15,22 @@
   "license": "Fair license",
   "node-red": {
     "nodes": {
-      "create-session": "create-session.js",
-	  "navigate-to":"navigate-to.js",
-	  "send-keys":"send-keys.js",
-	  "mouse":"mouse.js",
-	  "web-alert":"web-alert.js",
-	  "set-element":"set-element.js",
-	  "window-action":"window-action.js",
-	  "set-title":"set-title.js",
-	  "switch-frame":"switch-frame.js",
-	  "switch-window":"switch-window.js",
-	  "get-element":"get-element.js",
-	  "get-window":"get-window.js",
-	  "execute-script":"execute-script.js",
-	  "scrap-data":"scrap-data.js",
-	  "screen-shot":"screen-shot.js"
+      "nbr-web-create-session": "nbr-web-create-session.js",
+	  "nbr-web-navigate-to":"nbr-web-navigate-to.js",
+	  "nbr-web-send-keys":"nbr-web-send-keys.js",
+	  "nbr-web-mouse":"nbr-web-mouse.js",
+	  "nbr-web-alert":"nbr-web-alert.js",
+	  "nbr-web-set-element":"nbr-web-set-element.js",
+	  "nbr-web-window-action":"nbr-web-window-action.js",
+	  "nbr-web-set-title":"nbr-web-set-title.js",
+	  "nbr-web-switch-frame":"nbr-web-switch-frame.js",
+	  "nbr-web-switch-window":"nbr-web-switch-window.js",
+	  "nbr-web-get-element":"nbr-web-get-element.js",
+	  "nbr-web-get-window":"nbr-web-get-window.js",
+	  "nbr-web-execute-script":"nbr-web-execute-script.js",
+	  "nbr-web-scrap-data":"nbr-web-scrap-data.js",
+	  "nbr-web-exract-data":"nbr-web-extract-data.js",
+	  "nbr-web-screen-shot":"nbr-web-screen-shot.js"
     }
   }
 }

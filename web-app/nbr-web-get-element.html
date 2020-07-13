@@ -1,0 +1,87 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-web-get-element',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+            action: {value:0,required:true},
+            waitvisible: {value:false},
+            xpath: {value:"",required:true},
+            attr: {value:""},
+            variable: {value:"",required:true},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-random",
+        label: function() {
+			if (this.name == "") return "Get Element";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-web-get-element">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action"><i class="icon-tag"></i> Action</label>
+		<select class="form-control" id="node-input-action">
+			<option value="0">Text</option>
+			<option value="2">Value</option>
+			<option value="1">Attribute</option>
+			<option value="3">Selected</option>
+			<option value="4">Enabled</option>
+			<option value="5">Displayed</option>
+			<option value="6">Exists</option>
+			<option value="7">Count</option>
+		</select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> Element</label>
+        <input type="text" id="node-input-xpath" placeholder="Enter xpath of web element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-attr"><i class="icon-tag"></i> Attribute</label>
+        <input type="text" id="node-input-attr" placeholder="Enter attribute name if you choosed Attribute action">
+    </div>
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Result variable name</label>
+        <input type="text" id="node-input-variable" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitvisible"><i class="icon-tag"></i> Wait until visible</label>
+		<input type="checkbox" id="node-input-waitvisible" value="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-web-get-element">
+    <p>Gets element text, value or attribute values</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>Action : </b>Action</li>
+	  <li><b>Element : </b>XPath of web element</li>
+	  <li><b>Attribute : </b>Name of attribute</li>
+	  <li><b>Variable : </b>Specifies the variable name to assign the output. Output result is storing on local.</li>
+	  <li><b>Wait Until Item Visible : </b>Waits until web element visible</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>

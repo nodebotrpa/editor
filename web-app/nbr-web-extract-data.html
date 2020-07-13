@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-web-extract-data',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+			scrape: {value:"",required:true},
+            variable: {value:"",required:true},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-table",
+        label: function() {
+			if (this.name == "") return "Extract data";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-web-extract-data">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-scrape"><i class="icon-tag"></i> Scrape Data</label>
+        <textarea class="form-control" id="node-input-scrape" rows="3" style="width:70%"></textarea>
+    </div>
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Result variable name</label>
+        <input type="text" id="node-input-variable" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-web-extract-data">
+    <p>Extracts table data</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>Scrape Data: </b>Scrape information. You can use Web Data Scraping result text.</li>
+	  <li><b>Variable : </b>Specifies the variable name to assign the output. Output result is storing on local.</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>

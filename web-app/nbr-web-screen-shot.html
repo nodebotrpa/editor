@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-web-screen-shot',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            browser: {value:"",required:true},
+            filename: {value:"",required:true},
+            xpath: {value:""},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-camera",
+        label: function() {
+			if (this.name == "") return "Screenshot";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-web-screen-shot">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-xpath"><i class="icon-tag"></i> Element</label>
+        <input type="text" id="node-input-xpath" placeholder="Enter xpath of web element">
+    </div>
+    <div class="form-row">
+        <label for="node-input-filename"><i class="icon-tag"></i> File Name</label>
+        <input type="text" id="node-input-filename" placeholder="Enter name of file">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-web-screen-shot">
+    <p>Takes screenshot of an element or browser </p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
+	  <li><b>Element : </b>Xpath of web element</li>
+	  <li><b>File Name : </b>Saves screenshot to file</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>
