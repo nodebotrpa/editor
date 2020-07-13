@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-set-variable',{
+        category: 'Programming',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            variable: {value:"",required:true},
+            value: {value:""},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-download",
+        label: function() {
+			if (this.name == "") return "Set variable";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-set-variable">
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Variable</label>
+        <input type="text" id="node-input-variable" placeholder="Enter your variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-value"><i class="icon-tag"></i> Value</label>
+        <input type="text" id="node-input-value" placeholder="Enter new value of variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-set-variable">
+    <p>Sets variable value</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Variable : </b>Name of variable</li>
+	  <li><b>Value : </b>The new value will be setted</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>
