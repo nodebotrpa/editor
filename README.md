@@ -34,3 +34,4 @@ node ws-ssl.js
 3. Run [NodeBot Worker](https://github.com/nodebotrpa/bot)
 
 ## Documentation
+[Visit Documentation](https://github.com/nodebotrpa/editor/wiki)
