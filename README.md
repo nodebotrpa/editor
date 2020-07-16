@@ -11,9 +11,10 @@ npm install ws
 ~~~
 npm install -g --unsafe-perm node-red
 ~~~
-4. Download node files and copy under node_modules directory
-5. Start command line as administrator
-6. Run command
+4. Run Node-Red and install NodeBot RPA nodes from manage palette menu
+5. If you want to install manually follow the below steps
+5.1 Start command line as administrator
+5.2 Run command
 ~~~
 cd <node-red location>
 npm install <nodebot module>
