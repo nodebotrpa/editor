@@ -1,21 +1,28 @@
 {
-  "name": "worker-client-programming",
-  "version": "1.0.0",
-  "description": "Programming activities",
+  "name": "nbr-programming",
+  "version": "1.0.2",
+  "description": "NodeBot RPA Programming",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "variable"
+    "nodebot",
+    "rpa",
+    "variable",
+    "node-red"
   ],
   "author": "NodeBotRpa@gmail.com",
-  "license": "Fair License",
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodebotrpa/editor.git"
+  },
   "node-red": {
     "nodes": {
-	  "nbr-get-variable" :"nbr-get-variable.js",
-	  "nbr-set-variable" :"nbr-set-variable.js",
-	  "nbr-del-variable" :"nbr-del-variable.js"
+      "nbr-get-variable": "nbr-get-variable.js",
+      "nbr-set-variable": "nbr-set-variable.js",
+      "nbr-del-variable": "nbr-del-variable.js"
     }
   }
 }
