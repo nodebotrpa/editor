@@ -10,6 +10,7 @@
     "nodebot",
     "rpa",
     "variable",
+	"dataset","write","text file","csv",
     "node-red"
   ],
   "author": "NodeBotRpa@gmail.com",
@@ -22,7 +23,8 @@
     "nodes": {
       "nbr-get-variable": "nbr-get-variable.js",
       "nbr-set-variable": "nbr-set-variable.js",
-      "nbr-del-variable": "nbr-del-variable.js"
+      "nbr-del-variable": "nbr-del-variable.js",
+      "nbr-write-ds-text-file": "nbr-write-ds-text-file.js"
     }
   }
 }

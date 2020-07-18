@@ -1,0 +1,84 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-write-ds-text-file',{
+        category: 'Programming',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+			filename: {value:"",required:true},
+			data: {value:"",required:true},
+			overwrite: {value:false},
+			append: {value:true},
+			header: {value:true},
+			quote: {value:false},
+			delimeter: {value:";",required:true},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-pencil",
+        label: function() {
+			if (this.name == "") return "Write to text file";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-write-ds-text-file">
+    <div class="form-row">
+        <label for="node-input-filename"><i class="icon-tag"></i> File</label>
+        <input type="text" id="node-input-filename" placeholder="Enter filename">
+    </div>
+    <div class="form-row">
+        <label for="node-input-data"><i class="icon-tag"></i> Dataset</label>
+        <input type="text" id="node-input-data" placeholder="Enter dataset name">
+    </div>
+    <div class="form-row">
+		<label for="node-input-overwrite"><i class="icon-tag"></i> Overwrite</label>
+		<input type="checkbox" id="node-input-overwrite" value="">
+	</div>
+    <div class="form-row">
+		<label for="node-input-append"><i class="icon-tag"></i> Append</label>
+		<input type="checkbox" id="node-input-append" value="">
+	</div>
+    <div class="form-row">
+		<label for="node-input-quote"><i class="icon-tag"></i> Enclose Quote</label>
+		<input type="checkbox" id="node-input-quote" value="">
+	</div>
+    <div class="form-row">
+		<label for="node-input-header"><i class="icon-tag"></i> Add Header</label>
+		<input type="checkbox" id="node-input-header" value="">
+	</div>
+    <div class="form-row">
+		<label for="node-input-delimeter"><i class="icon-tag"></i> Delimeter</label>
+        <input type="text" id="node-input-delimeter" placeholder="Enter delimeter">
+	</div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-write-ds-text-file">
+    <p>Writes dataset to text file</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Filename : </b>Enter the files you want to write</li>
+	  <li><b>Dataset : </b>Enter the dataset variable name that you want to write</li>
+	  <li><b>Overwrite : </b>Overwrite existing file.</li>
+	  <li><b>Append : </b>Append specified text to file.</li>
+	  <li><b>Enclose Quote : </b>Cells will be enclosed with double quotes</li>
+	  <li><b>Add Header : </b>Write header</li>
+	  <li><b>Delimeter : </b>Delimeter character</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>
