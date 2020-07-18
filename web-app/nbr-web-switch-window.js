@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebSwitchWindowNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.action = config.action;
 		this.title = config.title;
 		this.waitvisible = config.waitvisible;
@@ -19,7 +18,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Executing"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"SWITCHWINDOW",browser:"",title:"",actionType:0,waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			if (node.title != "")
 			    t.title = node.title;
 			if (node.action != "")

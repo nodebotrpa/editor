@@ -4,7 +4,6 @@
         color: '#a6bbcf',
         defaults: {
 			name: {value:""},
-            browser: {value:"",required:true},
             xpath: {value:"",required:true},
             text: {value:"",required:true},
             clear: {value:false},
@@ -23,10 +22,6 @@
 </script>
 
 <script type="text/html" data-template-name="nbr-web-send-keys">
-    <div class="form-row">
-        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
-        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
-    </div>
     <div class="form-row">
         <label for="node-input-xpath"><i class="icon-tag"></i> Element</label>
         <input type="text" id="node-input-xpath" placeholder="Enter xpath of web element">
@@ -61,7 +56,6 @@
     <p>Send keys to web element</p>
 	<h1>Properties</h1>
 	<ul>
-	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
 	  <li><b>XPath : </b>XPath of web element</li>
 	  <li><b>Text : </b>Text to be typed. You can use hotkeys between {} eg. {CTRL}. Use {NULL} to release hotkeys</li>
 	  <li><b>Clear : </b>Clears web element text before typing</li>

@@ -4,7 +4,6 @@
         color: '#a6bbcf',
         defaults: {
 			name: {value:""},
-            browser: {value:"",required:true},
             action: {value:0,required:true},
             waitvisible: {value:false},
             xpath: {value:"",required:true},
@@ -24,10 +23,6 @@
 </script>
 
 <script type="text/html" data-template-name="nbr-web-get-element">
-    <div class="form-row">
-        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
-        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
-    </div>
     <div class="form-row">
         <label for="node-input-action"><i class="icon-tag"></i> Action</label>
 		<select class="form-control" id="node-input-action">
@@ -75,7 +70,6 @@
     <p>Gets element text, value or attribute values</p>
 	<h1>Properties</h1>
 	<ul>
-	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
 	  <li><b>Action : </b>Action</li>
 	  <li><b>Element : </b>XPath of web element</li>
 	  <li><b>Attribute : </b>Name of attribute</li>

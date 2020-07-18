@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebSendKeysNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.xpath = config.xpath;
 		this.text = config.text;
 		this.clear = config.clear;
@@ -20,7 +19,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Typing"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"SENDKEYS",browser:"",xpath:"",text:"",clear:false,waitvisible:false,waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.xpath = node.xpath;
 			t.text = node.text;
 			if (node.clear != "")

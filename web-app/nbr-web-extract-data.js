@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebExtractDataNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.scrape = config.scrape;
 		this.variable = config.variable;
 		this.waitbefore = config.waitbefore;
@@ -18,7 +17,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Extracting"});
 			//prepare script parameters
 			var t = {user:"admin",module:"WebDriver",action:"EXTRACTDATA",browser:"",scrape:"",variable:"",waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.scrape = node.scrape;
 			if (node.variable != "")
 			    t.variable = node.variable;

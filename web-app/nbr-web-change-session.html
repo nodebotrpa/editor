@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-web-change-session',{
+        category: 'Web Applications',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            session: {value:"",required:true},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-window-maximize",
+        label: function() {
+			if (this.name == "") return "Switch to "+this.session+" session";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-web-change-session">
+    <div class="form-row">
+        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
+        <input type="text" id="node-input-session" placeholder="Enter name of session variable">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-web-change-session">
+    <p>Changes browser session</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Session Name : </b>Name of created session</li>
+	</ul>
+</script>

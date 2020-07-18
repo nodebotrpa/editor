@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebExecuteScriptNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.script = config.script;
 		this.variable = config.variable;
 		this.waitbefore = config.waitbefore;
@@ -18,7 +17,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Executing"});
 			//prepare script parameters
 			var t = {user:"admin",module:"WebDriver",action:"EXECUTESCRIPT",browser:"",script:"",variable:"",waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.script = node.script;
 			if (node.variable != "")
 			    t.variable = node.variable;

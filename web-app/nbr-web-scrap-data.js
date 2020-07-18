@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebScrapDataNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.table = config.table;
 		this.header = config.header;
 		this.row = config.row;
@@ -22,7 +21,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Scraping"});
 			//prepare script parameters
 			var t = {user:"admin",module:"WebDriver",action:"SCRAPDATA",browser:"",table:"",header:"",row:"",col:"",firstRecord:false,variable:"",waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.table = node.table;
 			t.row = node.row;
 			t.col = node.col;
@@ -63,8 +62,7 @@ module.exports = function(RED) {
 			});
 			
 			ws.on('error', function(err) {
-				console.error("WebSocket error:", err);
-				node.status({fill:"red",shape:"ring",text:"error"});
+				node.status({fill:"red",shape:"circle",text:"error"});
 				if (err.code == "ECONNREFUSED")
 					node.error(new Error("Proxy server is not running"));
 				else 

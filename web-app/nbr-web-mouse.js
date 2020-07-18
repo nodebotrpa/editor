@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebMouseNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.xpath = config.xpath;
 		this.offsetX = config.offsetX;
 		this.offsetY = config.offsetY;
@@ -22,7 +21,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Clicking"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"MOUSE",browser:"",xpath:"",x:0,y:0,button:0,actionType:0,waitvisible:false,waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.xpath = node.xpath;
 			if (node.offsetX != "")
 			    t.x = parseInt(node.offsetX);

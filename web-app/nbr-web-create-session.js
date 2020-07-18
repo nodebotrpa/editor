@@ -49,11 +49,9 @@ module.exports = function(RED) {
 				var d = JSON.parse(data);
 				msg.payload = d.status;
 				if (d.status=="SUCCESS") {
-					console.log("var:#"+node.variable+"#");
 					if (node.variable != "") {
-						var r = {browser:node.browser};
-						flowContext.set(node.variable, r);
-						msg.payload = r;
+						flowContext.set("nbr-web-session","${"+node.variable+"}");
+						msg.payload = "Session created";
 					}
 					node.send(msg);
 					node.status({fill:"green",shape:"ring",text:"done"});

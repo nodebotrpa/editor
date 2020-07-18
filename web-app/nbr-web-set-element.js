@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebSetElementNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.xpath = config.xpath;
 		this.text = config.text;
 		this.attr = config.attr;
@@ -20,7 +19,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Setting value"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"SETELEMENT",browser:"",xpath:"",attr:"",text:"",waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.xpath = node.xpath;
 			if (node.text != "")
 			    t.text = node.text;

@@ -4,7 +4,6 @@
         color: '#a6bbcf',
         defaults: {
 			name: {value:""},
-            browser: {value:"",required:true},
             action: {value:0,required:true},
             variable: {value:"",required:true},
 			waitbefore: {value:"500"},
@@ -21,10 +20,6 @@
 </script>
 
 <script type="text/html" data-template-name="nbr-web-get-window">
-    <div class="form-row">
-        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
-        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
-    </div>
     <div class="form-row">
         <label for="node-input-action"><i class="icon-tag"></i> Action</label>
 		<select class="form-control" id="node-input-action">
@@ -54,7 +49,6 @@
     <p>Gets window title or url</p>
 	<h1>Properties</h1>
 	<ul>
-	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
 	  <li><b>Action : </b>Action</li>
 	  <li><b>Variable : </b>Specifies the variable name to assign the output. Output result is storing on local.</li>
 	  <li><b>Wait before node : </b>Delay before execution</li>

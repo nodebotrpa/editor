@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebWindowActionNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.action = config.action;
 		this.waitvisible = config.waitvisible;
 		this.waitbefore = config.waitbefore;
@@ -18,7 +17,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Executing"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"WINDOW",browser:"",actionType:0,waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			if (node.action != "")
 			    t.actionType = parseInt(node.action);
 			if (node.waitbefore != "")

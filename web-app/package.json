@@ -50,6 +50,7 @@
   "node-red": {
     "nodes": {
       "nbr-web-create-session": "nbr-web-create-session.js",
+      "nbr-web-change-session": "nbr-web-change-session.js",
       "nbr-web-navigate-to": "nbr-web-navigate-to.js",
       "nbr-web-send-keys": "nbr-web-send-keys.js",
       "nbr-web-mouse": "nbr-web-mouse.js",

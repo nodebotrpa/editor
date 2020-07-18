@@ -4,7 +4,6 @@
         color: '#a6bbcf',
         defaults: {
 			name: {value:""},
-            browser: {value:"",required:true},
 			scrape: {value:"",required:true},
             variable: {value:"",required:true},
 			waitbefore: {value:"500"},
@@ -21,10 +20,6 @@
 </script>
 
 <script type="text/html" data-template-name="nbr-web-extract-data">
-    <div class="form-row">
-        <label for="node-input-browser"><i class="icon-tag"></i> Session Name</label>
-        <input type="text" id="node-input-browser" placeholder="Enter name of session variable">
-    </div>
     <div class="form-row">
         <label for="node-input-scrape"><i class="icon-tag"></i> Scrape Data</label>
         <textarea class="form-control" id="node-input-scrape" rows="3" style="width:70%"></textarea>
@@ -50,9 +45,7 @@
 <script type="text/html" data-help-name="nbr-web-extract-data">
     <p>Extracts table data</p>
 	<h1>Properties</h1>
-	<ul>
-	  <li><b>Session Name : </b>Name of created session. Usage: ${Name of session}</li>
-	  <li><b>Scrape Data: </b>Scrape information. You can use Web Data Scraping result text.</li>
+	<ul>	  <li><b>Scrape Data: </b>Scrape information. You can use Web Data Scraping result text.</li>
 	  <li><b>Variable : </b>Specifies the variable name to assign the output. Output result is storing on local.</li>
 	  <li><b>Wait before node : </b>Delay before execution</li>
 	  <li><b>Wait after node : </b>Delay after execution</li>

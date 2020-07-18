@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebScreenShotNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.xpath = config.xpath;
 		this.filename = config.filename;
 		this.waitbefore = config.waitbefore;
@@ -18,7 +17,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Taking screenshot"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"SCREENSHOT",browser:"",xpath:"",filename:"",waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.filename = node.filename;
 			if (node.xpath != "")
 			    t.xpath = node.xpath;

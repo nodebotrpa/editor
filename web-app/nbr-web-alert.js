@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebAlertNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.action = config.action;
 		this.text = config.text;
 		this.waitvisible = config.waitvisible;
@@ -19,7 +18,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Alert"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"ALERT",browser:"",actionType:0,text:"",waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			if (node.action != "")
 			    t.actionType = parseInt(node.action);
 			if (node.text != "")

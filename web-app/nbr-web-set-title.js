@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebSetTitleNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.title = config.title;
 		this.waitbefore = config.waitbefore;
 		this.waitafter = config.waitafter;
@@ -17,7 +16,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Setting title"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"SETTITLE",browser:"",title:"",waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.title = node.title;
 			if (node.waitbefore != "")
 			    t.waitbefore = parseInt(node.waitbefore);

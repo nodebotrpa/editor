@@ -5,7 +5,6 @@ module.exports = function(RED) {
     function NbrWebNavigateToNode(config) {
         RED.nodes.createNode(this,config);
 		// Node parameters
-		this.browser = config.browser;
 		this.url = config.url;
 		this.pageLoad = config.pageLoad;
 		this.waitbefore = config.waitbefore;
@@ -18,7 +17,7 @@ module.exports = function(RED) {
 			node.status({fill:"blue",shape:"ring",text:"Navigate To Url"});
 			//prepare action parameters
 			var t = {user:"admin",module:"WebDriver",action:"NAVIGATETO",browser:"",url:"",pageLoad:false,waitbefore:500,waitafter:500};
-			t.browser = node.browser;
+			t.browser = flowContext.get("nbr-web-session");
 			t.url = node.url;
 			if (node.pageLoad != "")
 			    t.pageLoad = node.pageLoad;
