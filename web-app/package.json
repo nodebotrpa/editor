@@ -1,6 +1,6 @@
 {
   "name": "nbr-web-app",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "NodeBot RPA Web Applications",
   "main": "index.js",
   "scripts": {
