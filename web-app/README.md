@@ -3,9 +3,9 @@
 NodeBot allows you to automate web applications like form filling, data extracting, testing.
 
 ## Install
-Run the following command in you Node-RED user directory 
+Run the following command in your Node-RED user directory 
 ```
-npm install nbr-web-application
+npm install nbr-web-app
 ```
 
 If you didnt install ws before, you must install ws also. 
