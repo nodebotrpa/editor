@@ -3,7 +3,7 @@
 NodeBot Programming allows you to set, get and remove variables at NodeBot Worker.
 
 ## Install
-Run the following command in you Node-RED user directory 
+Run the following command in your Node-RED user directory 
 ```
 npm install nbr-programming
 ```
