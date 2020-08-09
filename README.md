@@ -9,7 +9,7 @@ npm install -g --unsafe-perm node-red
 ~~~
 3. Run Node-Red and install NodeBot RPA nodes from manage palette menu
 
-## Manual Automation Module Installation
+### Manual Automation Module Installation
 If you want to install manually follow the below steps
 1. Start command line as administrator
 2. Install ws if you didnt install before
