@@ -1,0 +1,30 @@
+{
+  "name": "nbr-keyb-mouse",
+  "version": "1.0.1",
+  "description": "Sends keyboard and mouse actions to worker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "keyboard",
+    "mouse",
+    "node-red",
+    "nodebot",
+    "automation",
+    "rpa"
+  ],
+  "author": "Mustafa C. ORAKCI",
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodebotrpa/editor.git"
+  },
+  "node-red": {
+    "nodes": {
+      "nbr-km-type": "nbr-km-type.js",
+      "nbr-km-hotkey": "nbr-km-hotkey.js",
+      "nbr-km-mouse": "nbr-km-mouse.js"
+    }
+  }
+}

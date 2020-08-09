@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-km-type',{
+        category: 'keyboard mouse',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            keys: {value:"",required:true},
+            speed: {value:"50"},
+            pressTab: {value:false},
+            pressEnter: {value:false},
+			waitbefore: {value:"100"},
+			waitafter: {value:"100"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-i-cursor",
+        label: function() {
+			if (this.name == "") return "Type text";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-km-type">
+    <div class="form-row">
+        <label for="node-input-keys"><i class="icon-tag"></i> Text</label>
+        <input type="text" id="node-input-keys" placeholder="Enter text to send keyboard">
+    </div>
+    <div class="form-row">
+        <label for="node-input-speed"><i class="icon-tag"></i> Speed</label>
+        <input type="text" id="node-input-speed" placeholder="">
+    </div>
+    <div class="form-row">
+		<label for="node-input-pressTab"><i class="icon-tag"></i> Press tab</label>
+		<input type="checkbox" id="node-input-pressTab" value="">
+	</div>
+    <div class="form-row">
+		<label for="node-input-pressEnter"><i class="icon-tag"></i> Press enter</label>
+		<input type="checkbox" id="node-input-pressEnter" value="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-km-type">
+    <p>Types text to current active window element</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Text : </b>Text for typing</li>
+	  <li><b>Speed : </b>Delay between keystrokes in miliseconds</li>
+	  <li><b>Press tab : </b>Press TAB key after typing text</li>
+	  <li><b>Press enter : </b>Press ENTER key after typing text</li>
+	  <li><b>Wait before node : </b>Delay before  keystrokes</li>
+	  <li><b>Wait after node : </b>Delay after keystrokes</li>
+	</ul>
+</script>

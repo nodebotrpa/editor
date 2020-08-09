@@ -1,0 +1,74 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-km-mouse',{
+        category: 'keyboard mouse',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            actionType: {value:2,required:true},
+            offsetX: {value:0,required:true},
+            offsetY: {value:0,required:true},
+            offset: {value:true},
+			waitbefore: {value:"100"},
+			waitafter: {value:"100"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-mouse-pointer",
+        label: function() {
+			if (this.name == "") return "Click";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-km-mouse">
+    <div class="form-row">
+        <label for="node-input-actionType"><i class="icon-tag"></i> Action</label>
+		<select class="form-control" id="node-input-actionType">
+			<option value="1">Move</option>
+			<option value="2">Click</option>
+			<option value="3">Right Click</option>
+			<option value="4">Middle Click</option>
+			<option value="5">Double Click</option>
+			<option value="6">Drag</option>
+			<option value="7">Drop</option>
+		</select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-offsetX"><i class="icon-tag"></i> X Coordinate</label>
+        <input type="text" id="node-input-offsetX" placeholder="Enter x position">
+    </div>
+    <div class="form-row">
+        <label for="node-input-offsetY"><i class="icon-tag"></i> Y Coordinate</label>
+        <input type="text" id="node-input-offsetY" placeholder="Enter y position">
+    </div>
+    <div class="form-row">
+		<label for="node-input-offset"><i class="icon-tag"></i> Absolute Position</label>
+		<input type="checkbox" id="node-input-offset" value="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-km-mouse">
+    <p>Simulates mouse actions</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Action : </b>Mouse action type</li>
+	  <li><b>Y Coordinate : </b>Y position on screen</li>
+	  <li><b>X Coordinate : </b>X position on screen</li>
+	  <li><b>Absolute : </b>X,Y positions on screen. If not set, x,y positions relative to current mouse position</li>
+	  <li><b>Wait before node : </b>Delay before action</li>
+	  <li><b>Wait after node : </b>Delay after action</li>
+	</ul>
+</script>
