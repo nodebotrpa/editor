@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-set-clipboard',{
+        category: 'Clipboard',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            text: {value:"",required:true},
+            waitbefore: {value:"100"},
+			waitafter: {value:"100"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-i-cursor",
+        label: function() {
+			if (this.name == "") return "Set clipboard";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-set-clipboard">
+    <div class="form-row">
+        <label for="node-input-text"><i class="icon-tag"></i> Text</label>
+        <input type="text" id="node-input-text" placeholder="Enter text to copy clipboard">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-set-clipboard">
+    <p>Sets a specified text to the clipboard</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Text : </b>Text to be copied to the clipboard</li>
+	  <li><b>Wait before node : </b>Delay before  keystrokes</li>
+	  <li><b>Wait after node : </b>Delay after keystrokes</li>
+	</ul>
+</script>

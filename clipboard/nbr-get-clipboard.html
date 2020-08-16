@@ -1,0 +1,49 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-get-clipboard',{
+        category: 'Clipboard',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            variable: {value:"",required:false},
+			waitbefore: {value:"500"},
+			waitafter: {value:"500"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-random",
+        label: function() {
+			if (this.name == "") return "Get Clipboard";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-get-clipboard">
+    <div class="form-row">
+        <label for="node-input-variable"><i class="icon-tag"></i> Result variable name</label>
+        <input type="text" id="node-input-variable" placeholder="">
+    </div>
+    <div class="form-row">
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-get-clipboard">
+    <p>Retrieves clipboard text into variable</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Variable : </b>Specifies the variable name to assign the output. Output result is storing on local.</li>
+	  <li><b>Wait before node : </b>Delay before execution</li>
+	  <li><b>Wait after node : </b>Delay after execution</li>
+	</ul>
+</script>
