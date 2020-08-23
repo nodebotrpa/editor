@@ -1,7 +1,7 @@
 {
   "name": "nbr-clipboard",
   "version": "1.0.0",
-  "description": "Sets or retrives clipboard data",
+  "description": "NodeBot RPA Clipboard Automation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,7 +25,10 @@
   "node-red": {
     "nodes": {
       "nbr-set-clipboard": "nbr-set-clipboard.js",
-      "nbr-get-clipboard": "nbr-get-clipboard.js"
+      "nbr-get-clipboard": "nbr-get-clipboard.js",
+      "nbr-set-img-clipboard": "nbr-set-img-clipboard.js",
+      "nbr-get-img-clipboard": "nbr-get-img-clipboard.js",
+      "nbr-clear-clipboard": "nbr-clear-clipboard.js"
     }
   }
 }

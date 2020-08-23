@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-clear-clipboard',{
+        category: 'Clipboard',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            waitbefore: {value:"100"},
+			waitafter: {value:"100"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-i-cursor",
+        label: function() {
+			if (this.name == "") return "Empty clipboard";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-clear-clipboard">
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-clear-clipboard">
+    <p>Clears clipboard</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>Wait before node : </b>Delay before  keystrokes</li>
+	  <li><b>Wait after node : </b>Delay after keystrokes</li>
+	</ul>
+</script>

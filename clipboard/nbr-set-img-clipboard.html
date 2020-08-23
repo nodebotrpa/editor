@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('nbr-set-img-clipboard',{
+        category: 'Clipboard',
+        color: '#a6bbcf',
+        defaults: {
+			name: {value:""},
+            path: {value:"",required:true},
+            waitbefore: {value:"100"},
+			waitafter: {value:"100"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-i-cursor",
+        label: function() {
+			if (this.name == "") return "Set clipboard";
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="nbr-set-img-clipboard">
+    <div class="form-row">
+        <label for="node-input-path"><i class="icon-tag"></i> File name</label>
+        <input type="text" id="node-input-path" placeholder="Enter image file to copy clipboard">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitbefore"><i class="icon-tag"></i> Wait before node</label>
+        <input type="text" id="node-input-waitbefore" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-waitafter"><i class="icon-tag"></i> Wait after node</label>
+        <input type="text" id="node-input-waitafter" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Enter node name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="nbr-set-img-clipboard">
+    <p>Sets an image to the clipboard</p>
+	<h1>Properties</h1>
+	<ul>
+	  <li><b>File name : </b>Image file name to be copied to the clipboard. (Supports BMP only)</li>
+	  <li><b>Wait before node : </b>Delay before action</li>
+	  <li><b>Wait after node : </b>Delay after action</li>
+	</ul>
+</script>
