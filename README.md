@@ -30,12 +30,7 @@ node-red
 ~~~
 You can access the editor by your browser at http://localhost:1880
 
-2. Run [BotConnect](https://github.com/nodebotrpa/connect)
-~~~
-cd <BotConnect location>
-node ws-ssl.js
-~~~
-3. Run [NodeBot Worker](https://github.com/nodebotrpa/bot)
+2. Run [NodeBot Worker](https://github.com/nodebotrpa/bot)
 
 ## Documentation
 [Visit Documentation](https://github.com/nodebotrpa/editor/wiki)
