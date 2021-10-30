@@ -67,7 +67,7 @@ module.exports = function(RED) {
 				console.error("WebSocket error:", err);
 				node.status({fill:"red",shape:"ring",text:"error"});
 				if (err.code == "ECONNREFUSED")
-					node.error(new Error("Proxy server is not running"));
+					node.error(new Error("Proxy server is not running. Please check if BotConnect and NodeBot Worker are running" ));
 				else 
 					node.error(new Error(err));
 				done(new Error(err))
